@@ -186,7 +186,7 @@ var taskStatusChangeHandler = function (event) {
 
 formEl.addEventListener("submit", taskFormHandler);
 
-// event probagation /event bubbling
+// event delegation /event bubbling
 pageContentEl.addEventListener("click", taskButtonHandler);
 
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
