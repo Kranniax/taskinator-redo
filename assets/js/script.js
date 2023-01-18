@@ -137,6 +137,18 @@ var deleteTask = function (taskId) {
     ".task-item[data-task-id='" + taskId + "']"
   );
   taskSelected.remove();
+  // create new array to hold updated list of tasks.
+  var updatedTaskArr = [];
+
+  // loop through current tasks.
+  for (var i = 0; i < tasks.length; i++) {
+    // if tasks[i].id doesn't match the value of taskId, let's keep that task and push it into the new array
+    if (tasks[i].id != parseInt(taskId)) {
+      updatedTaskArr.push(tasks[i]);
+    }
+  }
+  // reassign tasks array top be the same as updatedTaskArr.
+  tasks = updatedTaskArr;
 };
 var editTask = function (taskId) {
   console.log("Editing task #" + taskId);
@@ -205,7 +217,6 @@ var taskStatusChangeHandler = function (event) {
       tasks[i].status = statusValue;
     }
   }
-  console.log(tasks);
 };
 
 formEl.addEventListener("submit", taskFormHandler);
