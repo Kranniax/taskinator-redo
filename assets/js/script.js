@@ -118,7 +118,6 @@ var createTaskActions = function (taskId) {
     var statusOptionsEl = document.createElement("option");
     statusOptionsEl.textContent = statusChoices[i];
     statusOptionsEl.setAttribute("value", statusChoices[i]);
-
     // append to select
     statusSelectEl.appendChild(statusOptionsEl);
   }
@@ -241,7 +240,6 @@ var loadTask = function () {
     return false;
   }
   savedTasks = JSON.parse(savedTasks);
-
 
   // loop through savedTasks array
   for (var i = 0; i < savedTasks.length; i++) {
